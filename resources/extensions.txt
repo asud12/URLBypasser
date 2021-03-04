@@ -1,0 +1,6 @@
+.js
+.txt
+.html
+.php
+.json
+.random
