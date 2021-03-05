@@ -164,10 +164,10 @@ def do_headers(rb, base_url, base_path, ah):
 		for header_value in payload_header_values:
 
 			# request base url for x-original-url & x-rewrite-url to work correctly
-           		if header == "X-Original-URL" or header == "X-rewrite-url":
-               			url = "{}/{}".format(base_url, "")
-            		else:
-                		url = "{}/{}".format(base_url, base_path) 
+			if header == "X-Original-URL" or header == "X-rewrite-url":
+				url = "{}/{}".format(base_url, "")
+			else:
+				url = "{}/{}".format(base_url, base_path) 
 			
 			additional_headers = {}	
 			
