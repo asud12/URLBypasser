@@ -162,7 +162,13 @@ def do_headers(rb, base_url, base_path, ah):
 
 	for header in payload_headers:
 		for header_value in payload_header_values:
-			url = "{}/{}".format(base_url, base_path)
+
+			# request base url for x-original-url & x-rewrite-url to work correctly
+           		if header == "X-Original-URL" or header == "X-rewrite-url":
+               			url = "{}/{}".format(base_url, "")
+            		else:
+                		url = "{}/{}".format(base_url, base_path) 
+			
 			additional_headers = {}	
 			
 			header_value = header_value.format(base_url=base_url, base_path=base_path)
